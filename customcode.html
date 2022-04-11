@@ -549,6 +549,11 @@
 
   function show_endgame() {
       $(".endgame-container").show();
+      $(this).dequeue(); 
+      $(this).delay(3000).queue(function() { 
+      $(".end-text-container").animate({bottom: "-=1200px"}, 25000);
+      $(this).dequeue(); 
+      });
       // run endgame animtion (scroll)
   }
 
