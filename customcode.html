@@ -575,8 +575,7 @@
   
   // Cindy //
   $(".writer-button-confirm").click(function(){
-    if (writer_choice = writer_happy_ending) {daily_score++;}
-    else {}
+    if (writer_choice == writer_happy_ending) {daily_score++;}
     $(".patient-1-icon-d1").show();
     $(".patient-1-name-d1").show();
     $(this).dequeue();
@@ -618,12 +617,11 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (cinderella_choice = cinderella_happy_ending) {daily_score++;}
-    else {}
+    if (cinderella_choice == cinderella_happy_ending) {daily_score++;}
     $(".patient-2-icon-d1").show();
     $(".patient-2-name-d1").show();
     $(this).dequeue();
-    $(this).delay(23500).queue(function() { 
+    $(this).delay(25000).queue(function() { 
       enter_red();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -661,13 +659,13 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (red_choice = red_happy_ending) {daily_score++;}
-    else {}
+    if (red_choice == red_happy_ending) {daily_score++;}
     $(".patient-3-icon-d1").show();
     $(".patient-3-name-d1").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       document.getElementById('score-d1').textContent = daily_score
+      if (daily_score == 3) {document.getElementById('note-d1').textContent = "Bravo. Excellent job. Keep working like that and I might just let out of here."}
       show_d1_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -723,12 +721,11 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (frog_choice = frog_happy_ending) {daily_score++;}
-    else {}
+    if (frog_choice == frog_happy_ending) {daily_score++;}
     $(".patient-1-icon-d2").show();
     $(".patient-1-name-d2").show();
     $(this).dequeue();
-    $(this).delay(23500).queue(function() { 
+    $(this).delay(25000).queue(function() { 
       enter_aladdin();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -766,12 +763,11 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (aladdin_choice = aladdin_happy_ending) {daily_score++;}
-    else {}
+    if (aladdin_choice == aladdin_happy_ending) {daily_score++;}
     $(".patient-2-icon-d2").show();
     $(".patient-2-name-d2").show();
     $(this).dequeue();
-    $(this).delay(23500).queue(function() { 
+    $(this).delay(25000).queue(function() { 
       enter_piper();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -809,13 +805,13 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (piper_choice = piper_happy_ending) {daily_score++;}
-    else {}
+    if (piper_choice == piper_happy_ending) {daily_score++;}
     $(".patient-3-icon-d3").show();
     $(".patient-3-name-d3").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() {
-      document.getElementById('score-d2').textContent = daily_score 
+      document.getElementById('score-d2').textContent = daily_score
+      if (daily_score == 3) {document.getElementById('note-d2').textContent = "Bravo. Excellent job. Keep working like that and I might just let out of here."}
       show_d2_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -833,7 +829,7 @@
         $(".d3-patients").show();
         hide_d2_scorecard();
         $(this).dequeue();
-        $(this).delay(23500).queue(function() { 
+        $(this).delay(25000).queue(function() { 
             enter_pea();
             $(this).dequeue(); //makes queue progress (?)
             $(this).delay(3000).queue(function() { 
@@ -872,8 +868,7 @@
         backDelay: 5000,
         startDelay: 1000
     });
-    if (pea_choice = pea_happy_ending) {daily_score++;}
-    else {}
+    if (pea_choice == pea_happy_ending) {daily_score++;}
     $(".patient-1-icon-d3").show();
     $(".patient-1-name-d3").show();
     $(this).dequeue();
