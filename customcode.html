@@ -1,0 +1,773 @@
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+<script>
+  
+  function enter_writer() {
+    $(".character-container").show();
+    $(".writer-container").show();
+    $(".writer-entering-container").show();
+    $(".writer-entering-container").animate({bottom: "-=30px", height: "+=80px", width: "+=80px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['Oh great, you\'re on.', 'Perfect. I bet you\'re wondering what this is', 'You know what. I\'ll just show you. Scan me.'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 4000,
+        startDelay: 1000
+      });
+  }
+  
+  function seat_writer() {
+    $(".writer-sitting-container").show();
+    $(".writer-entering-container").hide();
+  }
+  
+  function scan_writer() {
+    $(".writer-sitting-container").hide();
+    $(".writer-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-writer").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['You should be able to see my files. Click on them', 'Now find the point of corruption, where my story goes wrong. You can use my original file to help you find it', 'Once you\'ve found the point of corruption, click on it. Zoom in if you need to',  'Then you should be able to see some different options I considered and then the choice I made.', 'Change it. Make me make the right choice.', 'Most of the patients you\'ll be seeing will have some kind of corruption in their stories.', 'HELPR stands for Happy Ending Longevity and Promotion Robot.', ' Your job is to ensure their happy ever afters.'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_writer_og_file() {
+    $(".writer-original-file").show();
+  }
+  
+  function show_writer_crr_file() {
+    $(".writer-corrupt-file").show();
+  }
+  
+  function enter_cinderella() {
+    $(".character-container").show();
+    $(".cinderella-container").show();
+    $(".cinderella-entering-container").show();
+    $(".cinderella-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['', 'Howdy I\'m Cinderella', 'Pretty stoked. I just had a ride on my trusty steed!', 'Sweet'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+  }
+
+  function seat_cinderella() {
+    $(".cinderella-sitting-container").show();
+    $(".cinderella-entering-container").hide();
+  }
+  
+  function scan_cinderella() {
+    $(".cinderella-sitting-container").hide();
+    $(".cinderella-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-cinderella").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_cinderella_og_file() {
+    $(".cinderella-original-file").show();
+  }
+  
+  function show_cinderella_crr_file() {
+    $(".cinderella-corrupt-file").show();
+  }
+  
+  function enter_red() {
+    $(".character-container").show();
+    $(".red-container").show();
+    $(".red-entering-container").show();
+    $(".red-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hi! I\'m Little Red Riding Hood', 'A little nervous cause I\'m scared of checkups but I\'m going to play with my best friend Mr Wolf later so I\'ll be okay', 'Okay!'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+  }
+
+  function seat_red() {
+    $(".red-sitting-container").show();
+    $(".red-entering-container").hide();
+  }
+  
+  function scan_red() {
+    $(".red-sitting-container").hide();
+    $(".red-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-red").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_red_og_file() {
+    $(".red-original-file").show();
+  }
+  
+  function show_red_crr_file() {
+    $(".red-corrupt-file").show();
+  }
+  
+  function enter_frog() {
+    $(".character-container").show();
+    $(".frog-container").show();
+    $(".frog-entering-container").show();
+    $(".frog-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Good day! I\'m the Frog.', 'Great actually. I just had a juicy swarm of flies for lunch.', 'Ribbet.'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+    
+  }
+
+  function seat_frog() {
+    $(".frog-sitting-container").show();
+    $(".frog-entering-container").hide();
+  }
+  
+  function scan_frog() {
+    $(".frog-sitting-container").hide();
+    $(".frog-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-frog").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_frog_og_file() {
+    $(".frog-original-file").show();
+  }
+  
+  function show_frog_crr_file() {
+    $(".frog-corrupt-file").show();
+  }
+  
+  function enter_aladdin() {
+    $(".character-container").show();
+    $(".aladdin-container").show();
+    $(".aladdin-entering-container").show();
+    $(".aladdin-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hey I\'m Aladdin', 'I\'m a little low on cash at the moment but I have my pet monkey Abu by my side, so I can\'t complain!', 'Cool'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+  }
+
+  function seat_aladdin() {
+    $(".aladdin-sitting-container").show();
+    $(".aladdin-entering-container").hide();
+  }
+  
+  function scan_aladdin() {
+    $(".aladdin-sitting-container").hide();
+    $(".aladdin-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-aladdin").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_aladdin_og_file() {
+    $(".aladdin-original-file").show();
+  }
+  
+  function show_aladdin_crr_file() {
+    $(".aladdin-corrupt-file").show();
+  }
+  
+  function enter_piper() {
+    $(".character-container").show();
+    $(".piper-container").show();
+    $(".piper-entering-container").show();
+    $(".piper-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hello hello hello! I\'m the Pied Piper', 'Jolly. Though I do have to be in court in an hour so can we make this quick?', 'Dandy'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+  }
+
+  function seat_piper() {
+    $(".piper-sitting-container").show();
+    $(".piper-entering-container").hide();
+  }
+  
+  function scan_piper() {
+    $(".piper-sitting-container").hide();
+    $(".piper-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-piper").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_piper_og_file() {
+    $(".piper-original-file").show();
+  }
+  
+  function show_piper_crr_file() {
+    $(".piper-corrupt-file").show();
+  }
+  
+  function enter_pea() {
+    $(".character-container").show();
+    $(".pea-container").show();
+    $(".pea-entering-container").show();
+    $(".pea-entering-container").animate({bottom: "-=20px"}, 4000);
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['How do you do? I\'m Penelope but people call me Pea', 'Great. I just made a ton of money from a ... job I did.', 'No problem'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+      });
+      
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+      });
+  }
+
+  function seat_pea() {
+    $(".pea-sitting-container").show();
+    $(".pea-entering-container").hide();
+  }
+  
+  function scan_pea() {
+    $(".pea-sitting-container").hide();
+    $(".pea-scanning-container").show();
+    $(".scanner-off-screen").hide();
+    $(".scanner-on-screen").show();
+    $(".overlay-container").show();
+    $(".overlay-left-pea").show();
+
+    var typed2 = new Typed('.character-dialogue', {
+        strings: ['','',''],        
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+
+      var typed2 = new Typed('.player-dialogue', {
+        strings: ['','',''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 3000,
+        startDelay: 1000
+      });
+  }
+  
+  function show_pea_og_file() {
+    $(".pea-original-file").show();
+  }
+  
+  function show_pea_crr_file() {
+    $(".pea-corrupt-file").show();
+  }
+
+  function show_d1_scorecard() {
+      $(".day-1-scorecard-container").show();
+  }
+
+  function hide_d1_scorecard() {
+      $(".day-1-scorecard-container").hide();
+  }
+
+  function show_d2_scorecard() {
+      $(".day-2-scorecard-container").show();
+  }
+
+  function hide_d2_scorecard() {
+      $(".day-2-scorecard-container").hide();
+  }
+
+  function show_endgame() {
+      $(".endgame-container").show();
+      // run endgame animtion (scroll)
+  }
+
+
+  $(document).ready(function(){ 
+   $(".button-start").click(function(){
+    $(this).delay(2000).queue(function() { 
+      enter_writer();
+      $(this).dequeue(); //makes queue progress (?)
+      $(this).delay(3000).queue(function() { 
+        seat_writer();
+        $(this).dequeue();
+        $(this).delay(16000).queue(function() { 
+          scan_writer();
+          $(this).dequeue();       
+          });
+        });
+    });
+   });
+  });
+  
+  // Cindy //
+  $(".writer-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      enter_cinderella();
+      $(this).dequeue(); //makes queue progress (?)
+      $(this).delay(3000).queue(function() { 
+        seat_cinderella();
+        $(this).dequeue();
+        $(this).delay(10000).queue(function() { 
+          scan_cinderella();
+          $(this).dequeue();       
+          });
+        });
+    });
+   });
+
+   // Red //
+
+   $(".cinderella-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
+    $(this).delay(12000).queue(function() { 
+      enter_red();
+      $(this).dequeue(); //makes queue progress (?)
+      $(this).delay(3000).queue(function() { 
+        seat_red();
+        $(this).dequeue();
+        $(this).delay(10000).queue(function() { 
+          scan_red();
+          $(this).dequeue();       
+          });
+        });
+    });
+   });
+
+   // Day 1 //
+
+   $(".red-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      show_d1_scorecard();
+      $(this).dequeue(); //makes queue progress (?)
+    });
+   });
+
+   // Frog //
+
+   $(".button-day-1-continue").click(function(){
+    $(this).delay(500).queue(function(){
+        hide_d1_scorecard();
+        $(this).dequeue();
+        $(this).delay(5000).queue(function() { 
+            enter_frog();
+            $(this).dequeue(); //makes queue progress (?)
+            $(this).delay(3000).queue(function() { 
+                seat_frog();
+                $(this).dequeue();
+                $(this).delay(10000).queue(function() { 
+                scan_frog();
+                $(this).dequeue();       
+                });
+            });
+        });
+    }); 
+   });
+
+   // Aladdin //
+
+   $(".frog-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      enter_aladdin();
+      $(this).dequeue(); //makes queue progress (?)
+      $(this).delay(3000).queue(function() { 
+        seat_aladdin();
+        $(this).dequeue();
+        $(this).delay(10000).queue(function() { 
+          scan_aladdin();
+          $(this).dequeue();       
+          });
+        });
+    });
+   });
+
+   // Piper //
+
+   $(".aladdin-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      enter_piper();
+      $(this).dequeue(); //makes queue progress (?)
+      $(this).delay(3000).queue(function() { 
+        seat_piper();
+        $(this).dequeue();
+        $(this).delay(10000).queue(function() { 
+          scan_piper();
+          $(this).dequeue();       
+          });
+        });
+    });
+   });
+
+   // Day 2 //
+
+   $(".piper-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      show_d2_scorecard();
+      $(this).dequeue(); //makes queue progress (?)
+    });
+   });
+
+   // Pea //
+
+   $(".button-day-2-continue").click(function(){
+    $(this).delay(500).queue(function(){
+        hide_d2_scorecard();
+        $(this).dequeue();
+        $(this).delay(12000).queue(function() { 
+            enter_pea();
+            $(this).dequeue(); //makes queue progress (?)
+            $(this).delay(3000).queue(function() { 
+                seat_pea();
+                $(this).dequeue();
+                $(this).delay(10000).queue(function() { 
+                scan_pea();
+                $(this).dequeue();       
+                });
+            });
+        });
+    }); 
+   });
+
+   // Endgame //
+
+   $(".pea-button-confirm").click(function(){
+    $(this).delay(12000).queue(function() { 
+      show_endgame();
+      $(this).dequeue(); //makes queue progress (?)
+    });
+   });
+
+   //
+
+  $(".writer-og-readme").click(function(){
+    show_writer_og_file();
+    
+  });
+  
+  $(".writer-crr-readme").click(function(){
+    show_writer_crr_file();
+  });
+  
+  $(".cinderella-og-readme").click(function(){
+    show_cinderella_og_file();
+  });
+  
+  $(".cinderella-crr-readme").click(function(){
+    show_cinderella_crr_file();
+  });
+  
+  $(".red-og-readme").click(function(){
+    show_red_og_file();
+  });
+  
+  $(".red-crr-readme").click(function(){
+    show_red_crr_file();
+  });
+  
+  $(".frog-og-readme").click(function(){
+    show_frog_og_file();
+  });
+  
+  $(".frog-crr-readme").click(function(){
+    show_frog_crr_file();
+  });
+  
+  $(".aladdin-og-readme").click(function(){
+    show_aladdin_og_file();
+  });
+  
+  $(".aladdin-crr-readme").click(function(){
+    show_aladdin_crr_file();
+  });
+  
+  $(".piper-og-readme").click(function(){
+    show_piper_og_file();
+  });
+  
+  $(".piper-crr-readme").click(function(){
+    show_piper_crr_file();
+  });
+  
+  $(".pea-og-readme").click(function(){
+    show_pea_og_file();
+  });
+  
+  $(".pea-crr-readme").click(function(){
+    show_pea_crr_file();
+  });
+  
+</script> 
