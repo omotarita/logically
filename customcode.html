@@ -256,7 +256,7 @@
       });
       
       var typed2 = new Typed('.player-dialogue', {
-        strings: ['','Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
         typeSpeed: 40,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -665,7 +665,26 @@
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       document.getElementById('score-d1').textContent = daily_score
-      if (daily_score == 3) {document.getElementById('note-d1').textContent = "Bravo. Excellent job. Keep working like that and I might just let out of here."}
+      if (daily_score == 0){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: red;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>          
+        }
+        else if (daily_score < 3){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: yellow;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementById('note-d2').textContent = "Not awful. You\'re getting there. Now really try to bring it home... secure these happily ever afters - and secure your freedom too!"
+        }
+        else {
+          <style>
+            .score-scorecard {-webkit-text-fill-color: green;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementById('note-d2').textContent = "Bravo. Excellent job. Keep working like that and I might just let you out of here.";
+        }
       show_d1_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -811,7 +830,26 @@
     $(this).dequeue();
     $(this).delay(20000).queue(function() {
       document.getElementById('score-d2').textContent = daily_score
-      if (daily_score == 3) {document.getElementById('note-d2').textContent = "Bravo. Excellent job. Keep working like that and I might just let out of here."}
+      if (daily_score == 0){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: red;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>          
+        }
+        else if (daily_score < 3){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: yellow;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementById('note-d2').textContent = "Not awful. You\'re getting there. Now really try to bring it home... secure these happily ever afters - and secure your freedom too!"
+        }
+        else {
+          <style>
+            .score-scorecard {-webkit-text-fill-color: green;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementById('note-d2').textContent = "Bravo. Excellent job. Keep working like that and I might just let you out of here.";
+        }
       show_d2_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
