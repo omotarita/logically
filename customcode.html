@@ -155,7 +155,7 @@
     $(".red-entering-container").animate({bottom: "-=20px"}, 4000);
 
     var typed2 = new Typed('.character-dialogue', {
-        strings:  ['Hi! I\'m Little Red Riding Hood', 'A little nervous cause I\'m scared of checkups but I\'m going to play with my best friend Mr Wolf later so I\'ll be okay', 'Okay!', ''],
+        strings:  ['','Hi! I\'m Little Red Riding Hood', 'A little nervous cause I\'m scared of checkups but I\'m going to play with my best friend Mr Wolf later so I\'ll be okay', 'Okay!', ''],
         typeSpeed: 25,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -166,7 +166,7 @@
       });
       
       var typed2 = new Typed('.player-dialogue', {
-        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
+        strings: ['','Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
         typeSpeed: 40,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -228,7 +228,7 @@
     $(".frog-entering-container").animate({bottom: "-=20px"}, 4000);
 
     var typed2 = new Typed('.character-dialogue', {
-        strings:  ['Good day! I\'m the Frog.', 'Great actually. I just had a juicy swarm of flies for lunch.', 'Ribbet.', ''],
+        strings:  ['','Good day! I\'m the Frog.', 'Great actually. I just had a juicy swarm of flies for lunch.', 'Ribbet.', ''],
         typeSpeed: 25,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -239,7 +239,7 @@
       });
       
       var typed2 = new Typed('.player-dialogue', {
-        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
+        strings: ['','Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup', ''],
         typeSpeed: 40,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -573,7 +573,7 @@
 
    $(".cinderella-button-confirm").click(function(){
     var typed2 = new Typed('.character-dialogue', {
-        strings:  ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!', ''],
+        strings: ['', 'Fine, I\'ll say', 'Yessir', 'Later alligator'],
         typeSpeed: 25,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -584,7 +584,7 @@
     });
       
     var typed2 = new Typed('.player-dialogue', {
-        strings: ['Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        strings: ['', 'Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
         typeSpeed: 40,
         backSpeed: 5,
         bindInputFocusEvents: true,
@@ -611,6 +611,28 @@
    // Day 1 //
 
    $(".red-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['','A little weird', 'Okay. I\'ll let my mom know', 'Bye'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['','Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       show_d1_scorecard();
       $(this).dequeue(); //makes queue progress (?)
@@ -641,6 +663,28 @@
    // Aladdin //
 
    $(".frog-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['', 'Uh. I feel okay.', 'Yessir', 'Later alligator'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['', 'Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       enter_aladdin();
       $(this).dequeue(); //makes queue progress (?)
@@ -658,6 +702,50 @@
    // Piper //
 
    $(".aladdin-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['','Alright', 'Will do, but I\'m sure I\'ll be fine', 'Deuces'],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['','Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!', ''],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       enter_piper();
       $(this).dequeue(); //makes queue progress (?)
@@ -675,6 +763,28 @@
    // Day 2 //
 
    $(".piper-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['','Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!', ''],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['','Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       show_d2_scorecard();
       $(this).dequeue(); //makes queue progress (?)
@@ -684,6 +794,7 @@
    // Pea //
 
    $(".button-day-2-continue").click(function(){
+    // voicemails: show Red, Aladdin + Frog (most compelling)
     $(this).delay(500).queue(function(){
         hide_d2_scorecard();
         $(this).dequeue();
@@ -705,6 +816,28 @@
    // Endgame //
 
    $(".pea-button-confirm").click(function(){
+    var typed2 = new Typed('.character-dialogue', {
+        strings:  ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!', ''],
+        typeSpeed: 25,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+    });
+      
+    var typed2 = new Typed('.player-dialogue', {
+        strings: ['Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
+        typeSpeed: 40,
+        backSpeed: 5,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+    });
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       show_endgame();
       $(this).dequeue(); //makes queue progress (?)
