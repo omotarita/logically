@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+    <script>
+      // notes: $( '.').css('display', 'block'); notes: document.getElementById('character-container')
+      // fix wait, show function, current_character
+
+      //var Webflow = Webflow || [];
+
+      /// Classes ///
+
+      class Character {
+        constructor(name, intro, exit, options, outcomes, happy_ending, choice, call, seen) {
+          this.name = name
+          this.intro_dialogue = intro
+          this.exit_dialogue = exit
+          this.options = options
+          this.outcomes = outcomes
+          this.happy_ending = happy_ending
+          this.choice = choice
+          this.call_dialogue = call
+          this.seen = seen
+        }
+
+        entering_img_container = name + "-entering" + "-container"
+        sitting_img_container = name + "-sitting" + "-container"
+        scanning = name + "-scanning" + "-container"
+        leaving_img_container = name + "-leaving" + "-container"
+        my_container = name + "-container"
+        corrupt_file = name + "-corrupt" + "-file"
+        original_file = name + "-original" + "-file"
+
+        show_character() {
+          $('.character-container').show();
+          $('.'+ my_container).show();
+        }
+
+        enter() {                                                                                                                            //jQuery lessons (https://www.w3schools.com/jquery/jquery_syntax.asp) & (https://www.youtube.com/watch?v=TwADzrr2hFI&t=420s)
+          $('.'+ entering_img_container).show()                                                                                                   // Jan Kruger's answer here (https://stackoverflow.com/questions/17097947/jquery-using-a-variable-as-a-selector)
+          $('.'+ sitting_img_container).hide()
+          $('.'+ leaving_img_container).hide()
+        }
+
+        sit() {
+          $('.'+ entering_img_container).hide()                                                                                                   
+          $('.'+ sitting_img_container).show()
+          $('.'+ leaving_img_container).hide()
+
+        }
+
+        leave() {
+          $('.'+ entering_img_container).hide()                                                                                                   
+          $('.'+ sitting_img_container).hide()
+          $('.'+ leaving_img_container).show()
+        }
+
+        hide_character() {
+          $('.'+ entering_img_container).hide() 
+          $('.'+ sitting_img_container).hide() 
+          $('.'+ scanning_img_container).hide() 
+          $('.'+ leaving_img_container).hide() 
+          $('.'+ my_container).hide()
+        }
+
+        show_corrupt_file() {
+          $('.'+ corrupt_file).show()  
+        }
+
+        show_original_file() {
+          $('.'+ original_file).show()  
+        }
+
+      }      
+
+      /// Characters ///
+
+      const Cinderella = new Character(
+      'cinderella', 
+      ['Howdy I\'m Cinderella', 'Pretty stoked. I just had a ride on my trusty steed!', 'Sweet'],
+      ['Fine, I\'ll say', 'Yessir', 'Later alligator'],
+      {a: 'prince', b: 'horse', c: 'stay'},
+      {a: 'Cinderella-a-option-id', b: 'Cinderella-b-option-id', c: 'Cinderella-c-option-id'},
+      a,
+      b,
+      {b: ['Howdy it\'s Cinderella', 'I\'ve been feeling amazing since I saw you', 'Thanks for your help!'], a: ['Howdy it\'s Cinderella.', 'I\'ve been feeling downright out of sorts since I saw you', 'And I keep having dreams about riding horses, but I don\'t know what they mean', 'I\'m gonna come back for a checkup if that\'s alright'], c: ['Howdy it\'s Cinderella.', 'I\'ve been feeling downright out of sorts since I saw you', 'And I keep having dreams about riding horses, but I don\'t know what they mean', 'I\'m gonna come back for a checkup if that\'s alright']},
+      false
+      );
+
+      const Red = new Character(
+      'red', 
+      ['Hi! I\'m Little Red Riding Hood', 'A little nervous cause I\'m scared of checkups but I\'m going to play with my best friend Mr Wolf later so I\'ll be okay', 'Okay!'],
+      ['A little weird', 'Okay. I\'ll let my mom know', 'Bye'],
+      {a: 'befriend wolf', b: 'lie', c: 'tell wolf'},
+      {a: 'Red-a-option-id', b: 'Red-b-option-id', c: 'Red-c-option-id'},
+      c,
+      a,
+      {b: ['Hello. I feel a little strange... and a little lonely', 'My mom says I should come back for a checkup so see you soon', 'Bye. It\'s Little Red by the way.'], c: ['Hello. I feel a little strange ... and a little lonely', 'My mom says I should come back for a checkup so see you soon', 'Bye. It\'s Little Red by the way.'], a: ['Hi! I feel really good so I guess I don\'t need to come back anytime soon - hehe', 'I had a really fun time with Mr Wolf that day, in case you were wondering', '...okay bye! It\'s Little Red by the way.']},
+      false
+      );
+
+      const Frog = new Character(
+      'frog', 
+      ['Good day! I\'m the Frog.', 'Great actually. I just had a juicy swarm of flies for lunch.', 'Ribbet.'],
+      ['*shrugs* I feel okay.', 'Yessir', 'Later alligator'],
+      {a: 'eat lunch', b: 'go to palace', c: 'attack princess'},
+      {a: 'Frog-a-option-id', b: 'Frog-b-option-id', c: 'Frog-c-option-id'},
+      b,
+      a,
+      {a: ['Good day. It\'s the Frog', 'Just reporting back to let you know I feel pretty good - no strange symptoms here', 'Thanks for the checkup. Ribbet.'], b: ['Good day. It\'s the Frog', 'I\'ve been feeling a little strange lately. I can hardly recognise myself', 'Please book me in for a follow-up if you have the time. Ribbet.'], c: ['Good day. It\'s the Frog', 'I\'ve been feeling a little strange lately. I can hardly recognise myself', 'Please book me in for a follow-up if you have the time. Ribbet.']},
+      false      
+      );
+
+      const Aladdin = new Character(
+      'aladdin', 
+      ['Hey I\'m Aladdin', 'I\'m a little low on cash at the moment but I have my pet monkey Abu by my side, so I can\'t complain!', 'Cool'],
+      ['Alright', 'Will do, but I\'m sure I\'ll be fine', 'Deuces'],
+      {a: 'wish for a job', b: 'trade lamp', c: 'wish for riches'},
+      {a: 'Aladdin-a-option-id', b: 'Aladdin-b-option-id', c: 'Aladdin-c-option-id'},
+      c,
+      b,
+      {a: ['Hey it\'s Aladdin', 'It\'s like I won the lottery - crazy things have been happening to me since I saw you', 'I know I shouldn\'t complain, but I do miss the simple life with Abu', '… can I come see you again?', 'Thanks… it\'s Aladdin.'], b: ['Hey it\'s Aladdin', 'Thanks for the checkup the other day', 'Will keep you posted, but so far so good!'], c: ['Hey it\'s Aladdin', 'It\'s like I won the lottery - crazy things have been happening to me since I saw you', 'I know I shouldn\'t complain, but I do miss the simple life, just me and Abu', '… can I come see you again?', 'Thanks… it\'s Aladdin.']},
+      false
+      );
+
+      const Piper = new Character(
+      'piper', 
+      ['Hello hello hello! I\'m the Pied Piper', 'Jolly. Though I do have to be in court in an hour so can we make this quick?', 'Dandy'],
+      ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!'],
+      {a: 'practice pipe', b: 'take children', c: 'sue'},
+      {a: 'Piper-a-option-id', b: 'Piper-b-option-id', c: 'Piper-c-option-id'},
+      b,
+      c,
+      {a: ['Hello hello hello. It\'s the Piper', 'I must say… it seems I\'m on a bit of a downward spiral I\'m afraid', 'Can I come see you again? Please do say yes', 'All the best.'], b: ['Hello hello hello. It\'s the Piper', 'I must say… it seems I\'m on a bit of a downward spiral I\'m afraid', 'Can I come see you again? Please do say yes', 'All the best.'], c: ['Hello hello hello! It\'s the Piper', 'Just reporting back to let you know I\'m feeling great', 'And I won my court case! So it\'s all joy round here', 'I\'ll let you know if anything changes - fingers crossed they don\'t!']},
+      false
+      );
+
+      const Pea = new Character(
+      'pea', 
+      ['How do you do? I\'m Penelope but people call me Pea', 'Great. I just made a ton of money from a ... job I did.', 'No problem'],
+      ['Different.', 'Okay. I will do', 'Goodbye!'],
+      {a: 'complain about lump', b: 'respond politely', c: 'extort prince'},
+      {a: 'Pea-a-option-id', b: 'Pea-b-option-id', c: 'Pea-c-option-id'},
+      a,
+      c,
+      {a: ['Hello again. It\'s Pea … or maybe I\'m Penelope in your records.', 'Just checking in to let you know I feel a little off', 'Good things have been happening but… I don\'t know', 'I guess they don\'t feel right…', 'Anyway, please let me know if I can come back for a follow up. Thanks.'], b: ['Hello again. It\'s Pea … or maybe I\'m Penelope in your records.', 'Just checking in to let you know I feel a little off', 'Good things have been happening but… I don\'t know', 'I guess they don\'t feel right…', 'Anyway, please let me know if I can come back for a follow up. Thanks.'], c: ['Hello again. It\'s Pea … or maybe I\'m Penelope in your records.', 'Just checking in to let you know I feel right as rain!', 'Thanks again for the checkup. Bye now!']},
+      false
+      );
+
+      const Writer = new Character(
+      'writer', 
+      ['Writer text entering'],
+      ['Writer text exiting'],
+      {a: 'write', b: 'sleep', c: 'learn guitar'},
+      {a: 'Writer-a-option-id', b: 'Writer-b-option-id', c: 'Writer-c-option-id'},
+      a,
+      a,
+      {a: ['Remember - keep up the happy endings!']},
+      false
+      );
+
+      /// Variables ///
+
+      const myCharacters = [Cinderella, Red, Frog, Aladdin, Piper, Pea];
+      var daily_score = new Number();
+      var visitor_counter = new Number();
+      var day_counter = new Number();
+      const max_daily_visitors = 3;
+      var current_character;
+      var character_enters = new Boolean();
+      var character_sits = new Boolean();
+      var character_leaves = new Boolean();
+      var todays_visitors = [];
+      var tutorial_complete = new Boolean();
+
+      /// Functions ///
+
+      function show_overlay() {
+        $('.overlay-left').show() 
+      }
+
+      function hide_overlay() {
+        $('.cinderella-original-file').hide(); 
+        $('.cinderella-corrupt-file').hide();
+        $('.aladdin-original-file').hide(); 
+        $('.aladdin-corrupt-file').hide();
+        $('.writer-original-file').hide(); 
+        $('.writer-corrupt-file').hide();
+        $('.red-original-file').hide(); 
+        $('.red-corrupt-file').hide();
+        $('.frog-original-file').hide(); 
+        $('.frog-corrupt-file').hide();
+        $('.pea-original-file').hide(); 
+        $('.pea-corrupt-file').hide();
+        $('.piper-original-file').hide(); 
+        $('.piper-corrupt-file').hide();
+        $('.overlay-left').hide() 
+      }
+
+      function show_daily_scorecard(day_counter, daily_score) {
+        document.getElementsByClassName('date-daily-scorecard').textContent = 'Day ' + day_counter; // write 'Day' + day_counter in '.date-daily-scorecard'
+         
+        document.getElementsByClassName('score-scorecard').textContent = daily_score;      // write daily_score in '.score-scorecard'
+        if (daily_score = 0){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: red;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementsByClassName('writers-note').textContent = 'You\'re gonna have to do much much better than this if you ever want to leave this room. Next time, try and think "What Would The Writer Do?"';
+        }
+        else if (daily_score < 3){
+          <style>
+            .score-scorecard {-webkit-text-fill-color: yellow;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementsByClassName('writers-note').textContent = 'Not bad. You\'re getting there. Now really try to bring it home... secure these happily ever afters - and secure your freedom too!';
+        }
+        else {
+          <style>
+            .score-scorecard {-webkit-text-fill-color: green;}
+            .score-scorecard {-webkit-text-stroke: 1px black;}
+          </style>
+          document.getElementsByClassName('writers-note').textContent = 'Bravo. Excellent job. Keep working like that and you\'ll be out of here in no time.';
+        }
+        $('.daily-scorecard-container').show();
+      }
+
+      function hide_daily_scorecard() {
+        $('.daily-scorecard-container').hide(); 
+      }
+
+      function show_endgame() {
+        $('.endgame-container').show(); 
+      }
+
+      function play_voicemail(todays_visitors) {
+        // function which takes in a list of today's visitors, shuffles the order and displays their call_dialogues one after the other
+      }
+
+      function print_visitors(todays_visitors) {
+        // document.getElementsByClassName('patient-1-name').textContent = todays_visitors[0].name etc etc
+      }
+
+      function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      function gameplay() {
+        tutorial_complete = false;
+        Cinderella.seen = false;
+        Red.seen = false;
+        Frog.seen = false;
+        Aladdin.seen = false;
+        Piper.seen = false;
+        Pea.seen = false;
+        daily_score = 0;
+        visitor_counter = 0;
+        day_counter = 1;
+        shuffle(myCharacters);
+        document.getElementsByClassName('day-counter').textContent = day_counter;
+
+        do {
+          delay(5000);
+          Writer.show_character();
+        } while (tutorial_complete = false);
+        visitor_counter++;
+        for (let i = 0; i < myCharacters.length; i++){
+          current_character = myCharacters[i];
+          if (visitor_counter < max_daily_visitors) {
+            delay(30000);
+            do {
+              current_character.show_character();
+            } while (current_character.seen = false);
+
+            if (current_character.choice == current_character.happy_ending) {
+                daily_score++;
+            }
+            todays_visitors.push(current_character);
+            visitor_counter++;
+          }
+          else { // when we reach max daily visitors, call it a day
+            // show daily scorecard, reset daily score and reset visitor counter. 
+            // start a new day (possibly trigger 'eye-opening' animation)
+
+            // we need something here to halt gameplay in this section until a trigger is met e.g. a if statement and/or a boolean
+            do {
+              show_daily_scorecard(day_counter, daily_score);
+            } while (proceed_next_day = false);
+            hide_daily_scorecard();
+            visitor_counter = 0;  
+            daily_score = 0; 
+            day_counter++;
+            document.getElementsByClassName('day-counter').textContent = day_counter;
+            todays_visitors = []; 
+            proceed_next_day = false;   
+          }
+        }
+        show_endgame();
+        
+      }
+
+      /// Triggers ///
+
+      $( ".button-start").click(function(){
+          gameplay();
+      });
+
+      $( ".button-proceed").click(function(){
+          tutorial_complete = true;
+          $('.button-proceed').hide();
+      });
+
+      $( ".button-continue").click(function(){
+          proceed_next_day = true;
+      });
+
+      $( ".original-readme").click(function(){
+          current_character.show_original_file();
+      });
+
+      $( ".corrupted-readme").click(function(){
+          current_character.show_corrupt_file();
+      });
+
+      $( ".cinderella-button-confirm").click(function(){
+          Cinderella.seen = true;
+          hide_overlay();
+      });
+
+      $( ".writer-button-confirm").click(function(){
+          Writer.seen = true;
+          hide_overlay();
+      });
+
+      $( ".red-button-confirm").click(function(){
+          Red.seen = true;
+          hide_overlay();
+      });
+
+      $( ".frog-button-confirm").click(function(){
+          Frog.seen = true;
+          hide_overlay();
+      });
+
+      $( ".aladdin-button-confirm").click(function(){
+          Aladdin.seen = true;
+          hide_overlay();
+      });
+
+      $( ".piper-button-confirm").click(function(){
+          Piper.seen = true;
+          hide_overlay();
+      });
+
+      $( ".pea-button-confirm").click(function(){
+          Pea.seen = true;
+          hide_overlay();
+      });
+      
+      
+      // Mark Point
+
+      
+    </script> 
+
+</html>

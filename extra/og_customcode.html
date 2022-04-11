@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+    <script>
+      // fix wait, show function, current_character
+
+      var Webflow = Webflow || [];
+      var music = document.getElementById('music')
+      
+
+      /// Triggers ///
+
+      $( ".Button-audio").click(function(){
+          music.play();
+      });
+
+      $( ".Button-start").click(function(){
+          gameplay();
+      });
+
+      $( ".Button-confirm-changes").click(function(){
+          current_character.seen = true
+      });
+
+     /// Functions ///
+
+      function shuffle(array){
+        for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        }
+      } 
+      
+      function show() {
+
+      }
+
+      function gameplay() {
+        daily_score = 0
+        visitor_counter = 0
+        day_counter = 1
+        shuffle(myCharacters);
+        while (tutorial_complete = false) {
+          show(Writer)
+        }
+        for (let i = 0; i < myCharacters.length; i++){
+            myCharacters[i] = current_character
+            if (visitor_counter < max_visitors) {
+              while (current_character.seen = false) {
+                wait: 1000 // wait a short while between characters
+                show(current_character)
+                if (current_character.choice == current_character.happy_ending) {
+                  daily_score++
+                }
+              }
+              visitor_counter++
+            }
+            else { // when we reach max daily visitors, call it a day
+              // show daily scorecard, reset daily score and reset visitor counter. 
+              // start a new day (possibly trigger 'eye-opening' animation)
+
+              show(daily-scorecard-container)
+              visitor_counter = 0  
+              daily_score = 0 
+              day_counter++    
+            }
+        }
+        show(endgame-container)
+      }
+
+
+      /// Variables ///
+
+      var daily_score = new Integer();
+      var visitor_counter = new Integer();
+      var day_counter = new Integer();
+      var max_visitors = 5;
+      var current_character = new String();
+      var character_enters = new Boolean();
+      var character_sits = new Boolean();
+      var character_leaves = new Boolean();
+      
+      var story_outcome = new Texted('.outcome'), { //v rudimentary, should be edited
+        // outcome image should match
+        id = outcomes[a]
+      });
+
+      var terminal_text = new Texted('.etc'), {
+        string = 'Traceback (most recent call last) \b File "Users/HELP-R/<myCharacters[i]> \b StoryError: corruption detected'
+      }
+
+      if (character_enters) {
+        var dialogue_char = new Typed('.character-dialogue', {
+        strings: current_character.intro_dialogue,
+        typeSpeed: 125,
+        backSpeed: 25,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+        });
+      
+        var dialogue_playr = new Typed('.player-dialogue', {
+        strings: ['Hi I\'m HELPR', 'How are you feeling today?', 'Great. Now let\'s get started with your checkup'],
+        typeSpeed: 125,
+        backSpeed: 25,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+        });
+      }
+        
+    	if (character_leaves) {
+        var dialogue_char = new Typed('.character-dialogue', {
+        strings: current_character.exit_dialogue,
+        typeSpeed: 125,
+        backSpeed: 25,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 4000
+        });
+      
+        var dialogue_playr = new Typed('.player-dialogue', {
+        strings: ['How are you feeling?', 'Great. Please call my line if you experience any strange symptoms.', 'Goodbye.'],
+        typeSpeed: 125,
+        backSpeed: 25,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 5000,
+        startDelay: 1000
+        });
+      }
+
+      if (character_sits) {
+        var dialogue_playr = new Typed('.player-dialogue', {
+        strings: ['This won\'t take long.', 'Almost done.'],
+        typeSpeed: 125,
+        backSpeed: 25,
+        bindInputFocusEvents: true,
+        loop: false,
+        cursorChar: '',
+        backDelay: 20000,
+        startDelay: 1000
+        });
+      }
+        
+
+      /// Characters!! ///
+
+      class Character {
+        constructor(name) {
+    		this.name = name;
+        this.choice = choice
+  		  }
+
+        //static name; //str
+        static intro_dialogue = []; //list, getter
+        static exit_dialogue = []; //list, getter
+        static options; //dict, getter
+        static outcomes; //dict, getter
+        static happy_ending; //str, getter
+        static choice; //str, getter, setter
+        static call_dialogue; //dict, getter. should be a dict of lists (e.g. {a: ["Hi, it's Cinderella.", "I've been feeling pretty bad" ...]}
+        static entering_img_id; //str, getter
+        static sitting_awake_img_id; //str, getter
+        static sitting_asleep_img_id; //str, getter
+        static leaving_img_id; //str, getter
+        static seen = new Boolean(); // getter, setter
+
+        //add in setter function to set their choice in the game
+
+        //add in more functions
+      }
+
+      var myCharacters = ['Cinderella', 'Red', 'Frog', 'Aladdin', 'Pan', 'Pea'];
+
+      var Writer = new Character("Writer");
+
+
+      var Cinderella = new Character("Cinderella")
+      Cinderella.intro_dialogue = ['Hiya I\'m Cinderella!', 'Great! I just', 'Let\'s do it again. Weee!'];
+      Cinderella.exit_dialogue = ['','','']; //list
+      Cinderella.options = {a:'prince', b:'horse', c:'stay'}; //dict
+      Cinderella.outcomes = {a: '', b: '', c:''} //dict, values should be corresponding image id's
+      Cinderella.happy_ending = 'a' //str
+      Cinderella.choice = 'b' //str, can be set by user
+      Cinderella.call_dialogue = {a:['', '', ''], b:['', '', ''], c:['', '', '']}; //dict, this should be a dict of lists (e.g. {a: ["Hi, it's Cinderella.", "I've been feeling pretty bad" ...]}
+      Cinderella.entering_img_id; //TBC //str
+      Cinderella.sitting_awake_img_id; //TBC //str
+      Cinderella.sitting_asleep_img_id; //TBC //str
+      Cinderella.leaving_img_id; //TBC //str
+
+      var Aladdin = new Character("Aladdin");
+
+      Cinderella instanceof Character  //=> true
+      Aladdin instanceof Character  //=> true
+      Writer instanceof Character //=> true
+      
+    </script> 
+
+</html>
