@@ -4,6 +4,20 @@
 
   var day_counter = 1;
   var daily_score = 0;
+  var cinderella_choice;
+  var writer_choice;
+  var red_choice;
+  var frog_choice;
+  var aladdin_choice;
+  var piper_choice;
+  var pea_choice;
+  const cinderella_happy_ending = 'a';
+  const writer_happy_ending = 'a';
+  const red_happy_ending = 'c';
+  const frog_happy_ending = 'b';
+  const aladdin_happy_ending = 'c';
+  const piper_happy_ending = 'b';
+  const pea_happy_ending = 'a';
   
   function enter_writer() {
     $(".character-container").show();
@@ -561,6 +575,8 @@
   
   // Cindy //
   $(".writer-button-confirm").click(function(){
+    if (writer_choice = writer_happy_ending) {daily_score++;}
+    else {}
     $(".patient-1-icon-d1").show();
     $(".patient-1-name-d1").show();
     $(this).dequeue();
@@ -602,6 +618,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (cinderella_choice = cinderella_happy_ending) {daily_score++;}
+    else {}
     $(".patient-2-icon-d1").show();
     $(".patient-2-name-d1").show();
     $(this).dequeue();
@@ -643,6 +661,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (red_choice = red_happy_ending) {daily_score++;}
+    else {}
     $(".patient-3-icon-d1").show();
     $(".patient-3-name-d1").show();
     $(this).dequeue();
@@ -657,6 +677,7 @@
 
    $(".button-day-1-continue").click(function(){
     $(this).delay(500).queue(function(){
+        daily_score = 0;
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
         $(".d1-patients").hide();
@@ -702,6 +723,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (frog_choice = frog_happy_ending) {daily_score++;}
+    else {}
     $(".patient-1-icon-d2").show();
     $(".patient-1-name-d2").show();
     $(this).dequeue();
@@ -743,6 +766,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (aladdin_choice = aladdin_happy_ending) {daily_score++;}
+    else {}
     $(".patient-2-icon-d2").show();
     $(".patient-2-name-d2").show();
     $(this).dequeue();
@@ -784,6 +809,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (piper_choice = piper_happy_ending) {daily_score++;}
+    else {}
     $(".patient-3-icon-d3").show();
     $(".patient-3-name-d3").show();
     $(this).dequeue();
@@ -799,6 +826,7 @@
    $(".button-day-2-continue").click(function(){
     // voicemails: show Red, Aladdin + Frog (most compelling)
     $(this).delay(500).queue(function(){
+        daily_score = 0;
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
         $(".d2-patients").hide();
@@ -844,6 +872,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    if (pea_choice = pea_happy_ending) {daily_score++;}
+    else {}
     $(".patient-1-icon-d3").show();
     $(".patient-1-name-d3").show();
     $(this).dequeue();
@@ -912,4 +942,108 @@
     show_pea_crr_file();
   });
   
+  // Cinderella Choices //
+
+  $(".cinderella-a").click(function(){
+    cinderella_choice = 'a'
+  });
+
+  $(".cinderella-b").click(function(){
+    cinderella_choice = 'b'
+  });
+
+  $(".cinderella-c").click(function(){
+    cinderella_choice = 'c'
+  });
+
+  // Writer Choices //
+
+  $(".writer-a").click(function(){
+    writer_choice = 'a'
+  });
+
+  $(".writer-b").click(function(){
+    writer_choice = 'b'
+  });
+
+  $(".writer-c").click(function(){
+    writer_choice = 'c'
+  });
+
+  // Red Choices //
+
+  $(".red-a").click(function(){
+    red_choice = 'a'
+  });
+
+  $(".red-b").click(function(){
+    red_choice = 'b'
+  });
+
+  $(".red-c").click(function(){
+    red_choice = 'c'
+  });
+
+
+  // Frog Choices //
+
+  $(".frog-a").click(function(){
+    frog_choice = 'a'
+  });
+
+  $(".frog-b").click(function(){
+    frog_choice = 'b'
+  });
+
+  $(".frog-c").click(function(){
+    frog_choice = 'c'
+  });
+
+
+  // Aladdin Choices //
+
+  $(".aladdin-a").click(function(){
+    aladdin_choice = 'a'
+  });
+
+  $(".aladdin-b").click(function(){
+    aladdin_choice = 'b'
+  });
+
+  $(".aladdin-c").click(function(){
+    aladdin_choice = 'c'
+  });
+
+
+  // Piper Choices //
+
+  $(".piper-a").click(function(){
+    piper_choice = 'a'
+  });
+
+  $(".piper-b").click(function(){
+    piper_choice = 'b'
+  });
+
+  $(".piper-c").click(function(){
+    piper_choice = 'c'
+  });
+
+
+  // Pea Choices //
+
+  $(".pea-a").click(function(){
+    pea_choice = 'a'
+  });
+
+  $(".pea-b").click(function(){
+    pea_choice = 'b'
+  });
+
+  $(".pea-c").click(function(){
+    pea_choice = 'c'
+  });
+
+  
+
 </script> 
