@@ -549,11 +549,6 @@
 
   function show_endgame() {
       $(".endgame-container").show();
-      $(this).dequeue(); 
-      $(this).delay(3000).queue(function() { 
-      $(".end-text-container").animate({bottom: "-=1200px"}, 25000);
-      $(this).dequeue(); 
-      });
       // run endgame animtion (scroll)
   }
 
@@ -676,6 +671,14 @@
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       document.getElementById('score-d1').textContent = daily_score
+      if (daily_score == 0){         
+      }
+      else if (daily_score < 3){
+        document.getElementById('note-d1').textContent = "Not awful. You\'re getting there. Now really try to bring it home... secure these happily ever afters - and secure your freedom too!"
+      }
+      else {
+        document.getElementById('note-d1').textContent = "Bravo. Excellent job. Keep working like that and I might just let you out of here.";
+      }
       show_d1_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -827,6 +830,14 @@
     $(this).dequeue();
     $(this).delay(20000).queue(function() {
       document.getElementById('score-d2').textContent = daily_score
+      if (daily_score == 0){         
+      }
+      else if (daily_score < 3){
+        document.getElementById('note-d2').textContent = "Not awful. You\'re getting there. Now really try to bring it home... secure these happily ever afters - and secure your freedom too!"
+      }
+      else {
+        document.getElementById('note-d2').textContent = "Bravo. Excellent job. Keep working like that and I might just let you out of here.";
+      }
       show_d2_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
