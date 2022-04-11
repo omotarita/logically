@@ -1,6 +1,9 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
 <script>
+
+  var day_counter = 1;
+  var daily_score = 0;
   
   function enter_writer() {
     $(".character-container").show();
@@ -538,6 +541,8 @@
 
   $(document).ready(function(){ 
    $(".button-start").click(function(){
+    document.getElementById('day-count').textContent = day_counter
+    $(this).dequeue();
     $(this).delay(2000).queue(function() { 
       enter_writer();
       $(this).dequeue(); //makes queue progress (?)
@@ -608,7 +613,7 @@
     });
    });
 
-   // Day 1 //
+   // Day 1 end //
 
    $(".red-button-confirm").click(function(){
     var typed2 = new Typed('.character-dialogue', {
@@ -634,6 +639,7 @@
     });
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
+      document.getElementById('score-d1').textContent = daily_score
       show_d1_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -643,6 +649,8 @@
 
    $(".button-day-1-continue").click(function(){
     $(this).delay(500).queue(function(){
+        day_counter++;
+        document.getElementById('day-count').textContent = day_counter
         hide_d1_scorecard();
         $(this).dequeue();
         $(this).delay(5000).queue(function() { 
@@ -760,7 +768,7 @@
     });
    });
 
-   // Day 2 //
+   // Day 2 end //
 
    $(".piper-button-confirm").click(function(){
     var typed2 = new Typed('.character-dialogue', {
@@ -785,7 +793,8 @@
         startDelay: 1000
     });
     $(this).dequeue();
-    $(this).delay(20000).queue(function() { 
+    $(this).delay(20000).queue(function() {
+      document.getElementById('score-d2').textContent = daily_score 
       show_d2_scorecard();
       $(this).dequeue(); //makes queue progress (?)
     });
@@ -796,6 +805,8 @@
    $(".button-day-2-continue").click(function(){
     // voicemails: show Red, Aladdin + Frog (most compelling)
     $(this).delay(500).queue(function(){
+        day_counter++;
+        document.getElementById('day-count').textContent = day_counter
         hide_d2_scorecard();
         $(this).dequeue();
         $(this).delay(20000).queue(function() { 
