@@ -542,6 +542,7 @@
   $(document).ready(function(){ 
    $(".button-start").click(function(){
     document.getElementById('day-count').textContent = day_counter
+    $(".d1-patients").show();
     $(this).dequeue();
     $(this).delay(2000).queue(function() { 
       enter_writer();
@@ -560,6 +561,9 @@
   
   // Cindy //
   $(".writer-button-confirm").click(function(){
+    $(".patient-1-icon-d1").show();
+    $(".patient-1-name-d1").show();
+    $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       enter_cinderella();
       $(this).dequeue(); //makes queue progress (?)
@@ -598,8 +602,10 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-2-icon-d1").show();
+    $(".patient-2-name-d1").show();
     $(this).dequeue();
-    $(this).delay(20000).queue(function() { 
+    $(this).delay(23500).queue(function() { 
       enter_red();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -637,6 +643,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-3-icon-d1").show();
+    $(".patient-3-name-d1").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       document.getElementById('score-d1').textContent = daily_score
@@ -651,6 +659,8 @@
     $(this).delay(500).queue(function(){
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
+        $(".d1-patients").hide();
+        $(".d2-patients").show();
         hide_d1_scorecard();
         $(this).dequeue();
         $(this).delay(5000).queue(function() { 
@@ -692,8 +702,10 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-1-icon-d2").show();
+    $(".patient-1-name-d2").show();
     $(this).dequeue();
-    $(this).delay(20000).queue(function() { 
+    $(this).delay(23500).queue(function() { 
       enter_aladdin();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -731,30 +743,10 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-2-icon-d2").show();
+    $(".patient-2-name-d2").show();
     $(this).dequeue();
-    var typed2 = new Typed('.character-dialogue', {
-        strings:  ['Hmmm. A little different, I must admit', 'Alrightie', 'Toodles!', ''],
-        typeSpeed: 25,
-        backSpeed: 5,
-        bindInputFocusEvents: true,
-        loop: false,
-        cursorChar: '',
-        backDelay: 5000,
-        startDelay: 4000
-    });
-      
-    var typed2 = new Typed('.player-dialogue', {
-        strings: ['Welcome back. How are you feeling now?', 'Great. Please leave a message if you experience any strange symptoms.', 'Goodbye.', ''],
-        typeSpeed: 40,
-        backSpeed: 5,
-        bindInputFocusEvents: true,
-        loop: false,
-        cursorChar: '',
-        backDelay: 5000,
-        startDelay: 1000
-    });
-    $(this).dequeue();
-    $(this).delay(20000).queue(function() { 
+    $(this).delay(23500).queue(function() { 
       enter_piper();
       $(this).dequeue(); //makes queue progress (?)
       $(this).delay(3000).queue(function() { 
@@ -792,6 +784,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-3-icon-d3").show();
+    $(".patient-3-name-d3").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() {
       document.getElementById('score-d2').textContent = daily_score 
@@ -807,9 +801,11 @@
     $(this).delay(500).queue(function(){
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
+        $(".d2-patients").hide();
+        $(".d3-patients").show();
         hide_d2_scorecard();
         $(this).dequeue();
-        $(this).delay(20000).queue(function() { 
+        $(this).delay(23500).queue(function() { 
             enter_pea();
             $(this).dequeue(); //makes queue progress (?)
             $(this).delay(3000).queue(function() { 
@@ -848,6 +844,8 @@
         backDelay: 5000,
         startDelay: 1000
     });
+    $(".patient-1-icon-d3").show();
+    $(".patient-1-name-d3").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
       show_endgame();
