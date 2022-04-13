@@ -4,6 +4,7 @@
 
   var day_counter = 1;
   var daily_score = 0;
+  var total_score = 0;
   var cinderella_choice;
   var writer_choice;
   var red_choice;
@@ -688,6 +689,7 @@
 
    $(".button-day-1-continue").click(function(){
     $(this).delay(500).queue(function(){
+        ending_score = ending_score + daily_score;
         daily_score = 0;
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
@@ -848,6 +850,7 @@
    $(".button-day-2-continue").click(function(){
     // voicemails: show Red, Aladdin + Frog (most compelling)
     $(this).delay(500).queue(function(){
+        ending_score = ending_score + daily_score;
         daily_score = 0;
         day_counter++;
         document.getElementById('day-count').textContent = day_counter
@@ -901,6 +904,7 @@
     $(".patient-1-name-d3").show();
     $(this).dequeue();
     $(this).delay(20000).queue(function() { 
+      document.getElementById('ending-score').textContent = total_score
       show_endgame();
       $(this).dequeue(); //makes queue progress (?)
     });
